@@ -14,8 +14,8 @@ export default function Home() {
         <Header>
           <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg" />
           <Profile>
-            <Name>Dong</Name>
-            <UserImage src="./WIN_20220222_20_56_51_Pro.jpg" />
+            <Name>Dong Nguyen</Name>
+            <UserImage src="./api/WIN_20220222_20_56_51_Pro.jpg" />
           </Profile>
         </Header>
         {/*ActionButtons */}
@@ -32,10 +32,18 @@ const Wrapper = tw.div`
 const ActionItems = tw.div`
   flex-1
 `
-const Header = tw.div``
-const Profile = tw.div``
-const Name = tw.div``
-const UserImage = tw.img``
+const Header = tw.div`
+flex justify-between items-center
+`
+const Profile = tw.div`
+flex items-center
+`
+const Name = tw.div`
+mr-4 w-20 text-small
+`
+const UserImage = tw.img`
+h-12 w-12 rounded-full border-gray-200 p-px
+`
 const UberLogo = tw.img`
 h-28
 `
