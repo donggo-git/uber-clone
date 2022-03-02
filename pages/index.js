@@ -34,13 +34,16 @@ export default function Home() {
           </ActionButton>
         </ActionButtons>
         {/*InputButton */}
+        <InputButton>
+          Where to?
+        </InputButton>
       </ActionItems>
     </Wrapper>
   )
 }
 
 const Wrapper = tw.div`
-  flex flex-col bg-red-300 h-screen
+  flex flex-col h-screen
 `
 
 const ActionItems = tw.div`
@@ -74,7 +77,12 @@ h-32
 items-center justify-center
 rounded-lg
 flex-column
+transform hover:scale-105
+transition
 `
 const ActionButtonImage = tw.img`
 h-3/5
+`
+const InputButton = tw.div`
+h-20 bg-gray-200 text-2xl p-4 flex items-center mt-8
 `
