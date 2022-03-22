@@ -1,13 +1,16 @@
 import React from 'react'
 import tw from "tailwind-styled-components"
+import Link from 'next/link'
 
 const Search = () => {
     return (
         <Wrapper>
             {/*button container*/}
-            <ButtonContainer>
-                <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png' />
-            </ButtonContainer>
+            <Link href="/">
+                <ButtonContainer>
+                    <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png' />
+                </ButtonContainer>
+            </Link>
             { /*Input container */}
             <InputContainer>
                 <FromToIcon>
@@ -22,7 +25,14 @@ const Search = () => {
                 <PLusIcon src="https://img.icons8.com/ios/50/000000/plus-math.png" />
             </InputContainer>
             {/*Saved places */}
+            <SavePlace>
+                <StarIcon src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png" />
+                Saved places
+            </SavePlace>
             {/*Confirm location */}
+            <ConfirmLocations>
+                Confirm Locations
+            </ConfirmLocations>
         </Wrapper>
     )
 }
@@ -61,6 +71,18 @@ outline-none border-none
 `
 const PLusIcon = tw.img`
 w-10 h-10 bg-gray-200 rounded-full ml-3
+`
+
+const SavePlace = tw.div`
+flex items-center bg-white px-4 py-2
+`
+const StarIcon = tw.img`
+bg-gray-400 h-10 w-10 p-2 rounded-full mr-2
+`
+const ConfirmLocations = tw.div`
+bg-black h-auto w-80 
+text-white text-xl text-center
+ my-2 mx-auto p-2 
 `
 
 export default Search
