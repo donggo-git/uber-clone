@@ -6,7 +6,7 @@ const Search = () => {
     return (
         <Wrapper>
             {/*button container*/}
-            <Link href="/">
+            <Link href="/Search">
                 <ButtonContainer>
                     <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png' />
                 </ButtonContainer>
@@ -43,7 +43,7 @@ const ButtonContainer = tw.div`
 bg-white px-4
 `
 const BackButton = tw.img`
-h-12
+h-12 cursor-pointer
 `
 
 const InputContainer = tw.div`
@@ -80,9 +80,10 @@ const StarIcon = tw.img`
 bg-gray-400 h-10 w-10 p-2 rounded-full mr-2
 `
 const ConfirmLocations = tw.div`
-bg-black h-auto w-80 
-text-white text-xl text-center
- my-2 mx-auto p-2 
+bg-black
+text-white text-2xl text-center
+ my-2 mx-4 p-2 
+cursor-pointer
 `
 
 export default Search
