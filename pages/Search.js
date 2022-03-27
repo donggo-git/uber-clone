@@ -3,10 +3,18 @@ import tw from "tailwind-styled-components"
 import Link from 'next/link'
 
 const Search = () => {
+    /*
+    const access_token = 'pk.eyJ1IjoiZG9uZ2duZ3V5ZW4xMiIsImEiOiJja3p0ZWVraHIzOGp0MndueGpqcm9iZThjIn0.nUt3nLOHdVyUgv6CiAhgRw'
+    const getApi = () => {
+        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/Seattle.json?access_token=${access_token}`)
+            .then(response => response.json())
+            .then(data => console.log(data))
+    }
+    */
     return (
         <Wrapper>
             {/*button container*/}
-            <Link href="/Search">
+            <Link href="/">
                 <ButtonContainer>
                     <BackButton src='https://img.icons8.com/ios-filled/50/000000/left.png' />
                 </ButtonContainer>
