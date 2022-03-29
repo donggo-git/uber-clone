@@ -36,6 +36,7 @@ function Confirm() {
             .then(data => {
                 setDropOffCoord(data.features[0].center)
             })
+
     }
     return (
         <Wrapper>

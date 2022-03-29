@@ -15,9 +15,16 @@ function Map({ pickUpCoord, dropOffCoord }) {
     });
 
     //add pick up and drop off marker
-    if (pickUpCoord && dropOffCoord) {
+
+    if (pickUpCoord.length > 0 && dropOffCoord.length > 0) {
       addToMap(map, pickUpCoord)
       addToMap(map, dropOffCoord)
+      map.fitBounds([
+        pickUpCoord,
+        dropOffCoord
+      ], {
+        padding: 60
+      })
     }
 
   }, [pickUpCoord, dropOffCoord]);
@@ -26,7 +33,6 @@ function Map({ pickUpCoord, dropOffCoord }) {
     const marker1 = new mapboxgl.Marker()
       .setLngLat(coordinate)
       .addTo(map);
-
   }
 
   return (
