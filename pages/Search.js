@@ -1,16 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 import tw from "tailwind-styled-components"
 import Link from 'next/link'
 
 const Search = () => {
-    /*
-    const access_token = 'pk.eyJ1IjoiZG9uZ2duZ3V5ZW4xMiIsImEiOiJja3p0ZWVraHIzOGp0MndueGpqcm9iZThjIn0.nUt3nLOHdVyUgv6CiAhgRw'
-    const getApi = () => {
-        fetch(`https://api.mapbox.com/geocoding/v5/mapbox.places/Seattle.json?access_token=${access_token}`)
-            .then(response => response.json())
-            .then(data => console.log(data))
-    }
-    */
+    const [PickUp, setPickUp] = useState("")
+    const [DropOff, setDropOff] = useState("")
+    const handlePickUp = (e) => setPickUp(e)
+    const handleDropOff = (e) => setDropOff(e)
     return (
         <Wrapper>
             {/*button container*/}
@@ -27,8 +23,16 @@ const Search = () => {
                     <Square src="https://img.icons8.com/windows/50/000000/square-full.png"></Square>
                 </FromToIcon>
                 <InputBoxes>
-                    <Input placeholder='Enter pickup location' />
-                    <Input placeholder='Where to?' />
+                    <Input
+                        placeholder='Enter pickup location'
+                        value={PickUp}
+                        onChange={(e) => handlePickUp(e.target.value)}
+                    />
+                    <Input
+                        placeholder='Where to?'
+                        value={DropOff}
+                        onChange={(e) => handleDropOff(e.target.value)}
+                    />
                 </InputBoxes>
                 <PLusIcon src="https://img.icons8.com/ios/50/000000/plus-math.png" />
             </InputContainer>
@@ -38,10 +42,19 @@ const Search = () => {
                 Saved places
             </SavePlace>
             {/*Confirm location */}
-            <ConfirmLocations>
-                Confirm Locations
-            </ConfirmLocations>
-        </Wrapper>
+            <Link href={{
+                pathname: "/Confirm",
+                query: {
+                    PickUp: PickUp,
+                    DropOff: DropOff
+                }
+
+            }} >
+                <ConfirmLocations>
+                    Confirm Locations
+                </ConfirmLocations>
+            </Link>
+        </Wrapper >
     )
 }
 const Wrapper = tw.div`

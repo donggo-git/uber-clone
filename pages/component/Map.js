@@ -16,7 +16,7 @@ function Map({ pickUpCoord, dropOffCoord }) {
 
     //add pick up and drop off marker
 
-    if (pickUpCoord.length > 0 && dropOffCoord.length > 0) {
+    if (pickUpCoord?.length > 0 && dropOffCoord?.length > 0) {
       addToMap(map, pickUpCoord)
       addToMap(map, dropOffCoord)
       map.fitBounds([
