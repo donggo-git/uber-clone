@@ -1,6 +1,7 @@
 import tw from 'tailwind-styled-components'
 import React from 'react'
 import Map from './component/Map'
+import RideSelector from './component/RideSelector'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 
@@ -11,9 +12,9 @@ function Confirm() {
     const [pickUpCoord, setPickUpCoord] = useState([])
     const [dropOffCoord, setDropOffCoord] = useState([])
     useEffect(() => {
-        getPickUpCoordinates('Santa Monica')
-        getDropOffCoordinate('Los Angeles')
-    }, [])
+        getPickUpCoordinates(PickUp)
+        getDropOffCoordinate(DropOff)
+    }, [PickUp, DropOff])
 
 
     const getPickUpCoordinates = (pickup) => {
@@ -47,7 +48,11 @@ function Confirm() {
             <Map pickUpCoord={pickUpCoord} dropOffCoord={dropOffCoord} />
             <RideContainer>
                 {/*Ride Selector */}
+                <RideSelector />
                 {/*Confirm btn */}
+                <ConfirmButtonContainer>
+                    Confirm UberX
+                </ConfirmButtonContainer>
             </RideContainer>
         </Wrapper>
     )
@@ -59,5 +64,7 @@ const Wrapper = tw.div`
 flex h-screen flex-col
 `
 const RideContainer = tw.div`
-flex-1
+flex flex-1 flex-col
 `
+const ConfirmButtonContainer = tw.div`
+bg-black text-white`
